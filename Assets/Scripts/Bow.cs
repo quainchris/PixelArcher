@@ -32,4 +32,4 @@ public class Bow : MonoBehaviour
 			Instantiate (arrow, this.transform.position, Quaternion.identity);	
 		}	
 	}
-}
+}//end class
