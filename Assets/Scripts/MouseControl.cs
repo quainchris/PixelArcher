@@ -3,10 +3,11 @@ using System.Collections;
 
 public class MouseControl : MonoBehaviour 
 {
-	public Texture2D cursorImage;
-	
-	private int cursorWidth = 25;
-	private int cursorHeight = 25;
+//	public Texture2D cursorImage;
+//	
+//	private int cursorWidth = 25;
+//	private int cursorHeight = 25;
+//	public GameObject player;
 	
 	void Start()
 	{
@@ -16,6 +17,6 @@ public class MouseControl : MonoBehaviour
 	
 	void OnGUI()
 	{
-		GUI.DrawTexture(new Rect(Input.mousePosition.x, Screen.height - Input.mousePosition.y, cursorWidth, cursorHeight), cursorImage);
+		//GUI.DrawTexture(new Rect(player.transform.position.x + 100, player.transform.position.y, cursorWidth, cursorHeight), cursorImage);
 	}
 }

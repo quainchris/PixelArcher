@@ -3,16 +3,25 @@ using System.Collections;
 
 public class Arrow : MonoBehaviour
 {
-	public float arrowSpeed = 30f;
-	// Use this for initialization
-	void Start ()
-	{
+	public float arrowSpeed = 80f;
+	float degreesPerSecond = 45;
+	private bool isMoving = true;
 
-	}
-	
 	// Update is called once per frame
 	void Update ()
 	{
-		this.transform.Translate (Vector2.right * arrowSpeed * Time.deltaTime);
+		if (isMoving) {
+			this.transform.Translate (Vector2.right * arrowSpeed * Time.deltaTime);
+			this.transform.Rotate (-Vector3.forward, degreesPerSecond * Time.deltaTime);
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D col)
+	{
+		if (col.tag == "Ground") {
+			GetComponent<Rigidbody2D>().isKinematic = true;
+			isMoving = false;
+			Destroy (this.gameObject, 20);
+		}
 	}
 }
