@@ -18,7 +18,7 @@ public class Arrow : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		if (col.tag == "Ground") {
+		if (col.tag == "Ground" || col.tag == "Target" ) {
 			GetComponent<Rigidbody2D>().isKinematic = true;
 			isMoving = false;
 			Destroy (this.gameObject, 20);
