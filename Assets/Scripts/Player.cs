@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 	public float jumpSpeed = 0.1f;
 	public Transform groundedEnded;
 	public bool grounded = false;
+	public GameObject bow;
 	Animator anim;
 	
 	void Start ()
@@ -28,8 +29,9 @@ public class Player : MonoBehaviour
 			dir.x = speed;			
 		} else if 
 			(Input.GetKey (KeyCode.A)) {
-			anim.SetInteger ("Direction", 1);
+			anim.SetInteger ("Direction", 2);
 			dir.x = -speed;
+			bow.transform.rotation = this.transform.rotation;
 		} else {	
 			anim.SetInteger ("Direction", 0);
 		}
@@ -41,13 +43,6 @@ public class Player : MonoBehaviour
 		}
 
 				
-	}
-	//Attemped to get him jumping
-	void OnCollisionStay2D (Collision2D coll)
-	{
-		if (coll.gameObject.tag == "Ground" && (Input.GetKey (KeyCode.Space))) {
-	
-		}
 	}
 
 }//end class
