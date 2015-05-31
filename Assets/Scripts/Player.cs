@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 
 	public float speed = 0.1f;
 	public float jumpSpeed = 0.1f;
+	public Transform groundedEnded;
+	public bool grounded = false;
 	Animator anim;
 	
 	void Start ()
@@ -15,6 +17,10 @@ public class Player : MonoBehaviour
 	
 	void Update ()
 	{
+
+		Debug.DrawLine(this.transform.position,groundedEnded.position,Color.green);
+		grounded = Physics2D.Linecast(this.transform.position, groundedEnded.position, 1<<LayerMask.NameToLayer("Ground"));
+
 		Vector2 dir = Vector2.zero;	
 
 		if (Input.GetKey (KeyCode.D)) {
@@ -28,6 +34,12 @@ public class Player : MonoBehaviour
 			anim.SetInteger ("Direction", 0);
 		}
 		transform.Translate (dir);
+
+		if(Input.GetButton("Jump") && grounded)
+		{
+			GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 1f), ForceMode2D.Impulse);
+		}
+
 				
 	}
 	//Attemped to get him jumping
