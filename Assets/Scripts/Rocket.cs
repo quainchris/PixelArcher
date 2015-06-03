@@ -4,6 +4,7 @@ using System.Collections;
 public class Rocket : MonoBehaviour {
 	
 	public GameObject player;
+	public GameObject rocket;
 	Animator anim;
 
 	// Use this for initialization
@@ -24,7 +25,7 @@ public class Rocket : MonoBehaviour {
 			else if
 		       (coll.gameObject.tag == "Ground") {
 		        anim.Play("Impact", -1, 1);
-			    Destroy(gameObject);
+			    Destroy(rocket.gameObject);
 		}
 			
 	}
