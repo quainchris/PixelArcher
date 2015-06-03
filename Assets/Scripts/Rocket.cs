@@ -4,10 +4,12 @@ using System.Collections;
 public class Rocket : MonoBehaviour {
 	
 	public GameObject player;
+	Animator anim;
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start () 
+	{
+		anim = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -19,6 +21,11 @@ public class Rocket : MonoBehaviour {
 			if (coll.gameObject.tag == "Player") {
 				Destroy(coll.gameObject);
 			}
+			else if
+		       (coll.gameObject.tag == "Ground") {
+		        anim.Play("Impact", -1, 1);
+			    Destroy(gameObject);
+		}
 			
 	}
 }
