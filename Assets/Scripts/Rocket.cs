@@ -25,7 +25,7 @@ public class Rocket : MonoBehaviour {
 			else if
 		       (coll.gameObject.tag == "Ground") {
 		        anim.Play("Impact", -1, 1);
-			    Destroy(rocket.gameObject);
+			    Destroy(rocket.gameObject, 0.1f);
 		}
 			
 	}
