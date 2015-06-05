@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Arrow.cs" />
      <Compile Include="Assets\Scripts\Bow.cs" />
+     <Compile Include="Assets\Scripts\CameraShake.cs" />
      <Compile Include="Assets\Scripts\DefenderXAttack.cs" />
      <Compile Include="Assets\Scripts\DefenderXMovement.cs" />
      <Compile Include="Assets\Scripts\MouseControl.cs" />

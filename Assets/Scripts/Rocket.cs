@@ -4,7 +4,7 @@ using System.Collections;
 public class Rocket : MonoBehaviour {
 	
 	public GameObject player;
-	public GameObject rocket;
+	public CameraShake cameraShake;
 	Animator anim;
 
 	// Use this for initialization
@@ -25,7 +25,9 @@ public class Rocket : MonoBehaviour {
 			else if
 		       (coll.gameObject.tag == "Ground") {
 		        anim.Play("Impact", -1, 1);
-			    Destroy(rocket.gameObject, 0.1f);
+		        GameObject.Find("MainCamera").GetComponent("CameraShake");
+		        cameraShake.Shake();
+			    Destroy(this.gameObject, 0.1f);
 		}
 			
 	}
