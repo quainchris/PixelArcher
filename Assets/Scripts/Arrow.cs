@@ -6,14 +6,19 @@ public class Arrow : MonoBehaviour
 	public float arrowSpeed = 80f;
 	float degreesPerSecond = 45;
 	private bool isMoving = true;
-
+	public bool isPaused;
+	public GameObject player;
 	// Update is called once per frame
 	void Update ()
 	{
-		if (isMoving) {
-			this.transform.Translate (Vector2.right * arrowSpeed * Time.deltaTime);
-			this.transform.Rotate (-Vector3.forward, degreesPerSecond * Time.deltaTime);
-		}
+		isPaused = GameObject.FindGameObjectWithTag ("Player").GetComponent<Player> ().isPaused;
+
+		//if (!isPaused) {
+			if (isMoving) {
+				this.transform.Translate (Vector2.right * arrowSpeed * Time.deltaTime);
+				//this.transform.Rotate (-Vector3.forward, degreesPerSecond * Time.deltaTime);
+			}
+		//}
 	}
 
 	void OnTriggerEnter2D(Collider2D col)
