@@ -44,14 +44,14 @@ public class Player : MonoBehaviour
 			GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 1f), ForceMode2D.Impulse);
 		}
 
-		if(Input.GetKeyDown(KeyCode.P)&& timer >= 10f) 
-		{
-			isPaused = !isPaused;
-		}
-
-		if (isPaused && timer < 10f && timer > 0 && Input.GetKeyDown(KeyCode.P) ) {
-			isPaused = false;
-		}
+//		if(Input.GetKeyDown(KeyCode.P)&& timer >= 10f) 
+//		{
+//			isPaused = !isPaused;
+//		}
+//
+//		if (isPaused && timer < 10f && timer > 0 && Input.GetKeyDown(KeyCode.P) ) {
+//			isPaused = false;
+//		}
 		if (isPaused)
 			timer -= Time.deltaTime;
 

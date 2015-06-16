@@ -17,7 +17,7 @@ public class DefenderXAttack : MonoBehaviour {
 	void Update () {
 
 		isPaused = player.GetComponent<Player> ().isPaused;
-		RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up);
+		RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x,transform.position.y -1f), -Vector2.up);
 
 		if (!isPaused) {
 			if (hit.collider.tag == "Player") {
