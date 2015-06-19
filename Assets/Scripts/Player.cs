@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
 
 		if(Input.GetButton("Jump") && grounded)
 		{
-			GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 1f), ForceMode2D.Impulse);
+			GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 2f), ForceMode2D.Impulse);
 		}
 
 //		if(Input.GetKeyDown(KeyCode.P)&& timer >= 10f) 
